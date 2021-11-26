@@ -10,7 +10,7 @@ export const cmd = (cmdName?: string, description?: string) => {
   };
 };
 
-export const event = (name: RageEnums.EventKey) => {
+export const event = (name?: RageEnums.EventKey) => {
   return (target: any, propertyKey: string) => {
     mp.events.add(name ?? propertyKey, Reflect.get(target, propertyKey));
   };
